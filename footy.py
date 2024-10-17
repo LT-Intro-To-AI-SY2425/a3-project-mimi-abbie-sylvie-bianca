@@ -49,6 +49,16 @@ def players_by_team(matches: List[str]) -> List[str]:
 #             result.append(get_player(footy))
 #     return result
 
+def assists_by_player(matches: List[str]) -> List[str]:
+    player = str(matches[0])
+    result = []
+    for footy in footy_db:
+        players = get_player(footy)
+        if(player in players):
+            result.append(get_assists(footy))
+    return result  
+
+
 def player_by_goal(matches: List[str]) -> List[str]:
     goal_given = int(matches[0])
     result = []
@@ -68,6 +78,7 @@ def bye_action(dummy: List[str]) -> None:
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what players play on _"), players_by_team),
     (str.split("what player scored _ goals"), player_by_goal),
+    (str.split("how many assists does %  have"), assists_by_player),
     (["bye"], bye_action)
 ]
 
@@ -102,3 +113,4 @@ def query_loop() -> None:
 
     print("\nSo long!\n")
 query_loop()
+
