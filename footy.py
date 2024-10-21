@@ -91,7 +91,33 @@ def player_by_assists(matches: List[str]) -> List[str]:
 # dummy argument is ignored and doesn't matter
 def bye_action(dummy: List[str]) -> None:
     raise KeyboardInterrupt
+def player_by_min(matches: List[str])-> List[str]:
+    mins_given = int(matches[0])
+    result = []
+    for footy in footy_db:
+        if get_mins(footy) == mins_given:
+            result.append(get_player(footy))
+            break
+    return result
 
+
+def mins_by_player(matches: List[int])-> List[int]:
+    player_given = str(matches[0])
+    result = []
+    for footy in footy_db:
+        if get_player(footy) == player_given:
+            result.append(get_mins(footy))
+            break
+    return result
+
+def player_by_assists(matches: List[str])-> List[str]:
+    assists_given = int(matches[0])
+    result = []
+    for footy in footy_db:
+        if get_assists(footy) == assists_given:
+            result.append(get_player(footy))
+            break
+    return result
 
 # The pattern-action list for the natural language query system A list of tuples of
 # pattern and action It must be declared here, after all of the function definitions
