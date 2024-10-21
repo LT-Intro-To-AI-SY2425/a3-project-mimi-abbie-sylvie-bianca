@@ -55,12 +55,9 @@ footy_db: List[Tuple[str, str, int, int, int]] = [
         "sergio leonel agüero del castillo",  # player
         "manchester city",  # team
         1456,  #
-
-
-
-    ),
-
-
+        16,
+        3,
+        ),
 (
         "joel matip",  # player
         "liverpool",  # team
@@ -145,5 +142,126 @@ footy_db: List[Tuple[str, str, int, int, int]] = [
       1,  # goals
         1,  # assists
 
-    )
+    ),
+(
+        "joseph willock",  # player
+        "arsenal",  # team
+ 844,  # minutes
+  1,  # goals
+        1,  # assists
+
+    ),
+(
+        "jesse lingard",  # player
+        "manchester united",  # team
+ 932,  # minutes
+  1,  # goals
+        0,  # assists
+
+    ),
+(
+        "andreas hugo hoelgebaum pereira",  # player
+        "manchester united",  # team
+ 1488,  # minutes
+  1,  # goals
+        3,  # assists
+
+    ),
+(
+        "Paul Pogba",  # player
+        "Manchester United",  # team
+1205,  # minutes
+  1,  # goals
+        3,  # assists
+
+    ),
+(
+        "Victor Lindelof",  # player
+        "Manchester United",  # team
+ 3093,  # minutes
+  1,  # goals
+        0,  # assists
+
+    ),
+(
+        "Harry Maguire",  # player
+        "Manchester United",  # team
+ 3420,  # minutes
+  1,  # goals
+        1,  # assists
+
+    ),
+(
+        "Adam Lallana",  # player
+        "Liverpool",  # team
+ 374,  # minutes
+  1,  # goals
+        1,  # assists
+
+    ),
+(
+        "Mesut Ozil",  # player
+        "Arsenal",  # team
+ 1448,  # minutes
+  1,  # goals
+        2,  # assists
+
+    ),
+(
+        "Bukayo Saka",  # player
+        "Arsenal",  # team
+ 1753,  # minutes
+  1,  # goals
+        5,  # assists
+
+    ),
+(
+        "Brandon William",  # player
+        "Manchester United",  # team
+ 1004,  # minutes
+  1,  # goals
+        0,  # assists
+
+    ),
+(
+        "Kieran Tierney",  # player
+        "Arsenal",  # team
+ 992,  # minutes
+  1,  # goals
+        1,  # assists
+
+    ),
+(
+        "Hector Bellerin",  # player
+        "Arsenal",  # team
+ 1159,  # minutes
+  1,  # goals
+       0,  # assists
+
+    ),
+(
+        "Curtis Jones",  # player
+        "Liverpool",  # team
+ 122,  # minutes
+  1,  # goals
+        0,  # assists
+
+    ),
+(
+        "Joseph Gomez",  # player
+        "Liverpool",  # team
+ 1999,  # minutes
+  0,  # goals
+        0,  # assists
+
+    ),
+(
+        "Alisson Ramses Becker",  # player
+        "Liverpool",  # team
+ 2545,  # minutes
+  0,  # goals
+        1,  # assists
+
+    ),
 ]
+
