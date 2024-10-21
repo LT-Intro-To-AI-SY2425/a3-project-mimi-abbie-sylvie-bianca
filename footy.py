@@ -118,16 +118,21 @@ def player_by_assists(matches: List[str])-> List[str]:
             result.append(get_player(footy))
             break
     return result
-def player_by_min(matches: List[str])-> List[str]:
+def player_by_min_range(matches: List[str])-> List[str]:
     mins_given = int(matches[0])
     result = []
     for footy in footy_db:
-        if get_mins(footy) == mins_given:
+        if get_mins(footy) >= mins_given:
             result.append(get_player(footy))
-            break
     return result
 
-
+def player_by_goal_range(matches: List[str]) -> List[str]:
+    goal_range_given = int(matches[0])
+    result = []
+    for footy in footy_db:
+        if get_goals(footy) >= goal_range_given:
+            result.append(get_player(footy))
+    return result
 def mins_by_player(matches: List[int])-> List[int]:
     player_given = str(matches[0])
     result = []
@@ -145,6 +150,7 @@ def player_by_assists(matches: List[str])-> List[str]:
             result.append(get_player(footy))
             break
     return result
+
 # The pattern-action list for the natural language query system A list of tuples of
 # pattern and action It must be declared here, after all of the function definitions
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
@@ -153,8 +159,9 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("how many assists does %  have"), assists_by_player),
     (str.split("what player had _ assists"), player_by_assists),
     (str.split("what team does % play for"), team_by_player),
-    (str.split("what player played for _ minutes"), player_by_min),
+    (str.split("what player played for over _ minutes"), player_by_min_range),
     (str.split("how many minutes did % play"), mins_by_player),
+    (str.split("what players scored over _ goals"), player_by_goal_range),
     (["bye"], bye_action)
 ]
 
