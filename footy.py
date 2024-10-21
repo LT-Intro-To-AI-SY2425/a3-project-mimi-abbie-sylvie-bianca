@@ -30,6 +30,23 @@ def players_by_team(matches: List[str]) -> List[str]:
             result.append(get_player(footy))
     return result
 
+def team_by_player(matches: List[str]) -> List[str]:
+    player = str(matches[0])
+    result = []
+    for footy in footy_db:
+        players = get_player(footy)
+        if player in player:
+            result.append(get_team(footy))
+    return result
+
+# def player_by_goal(matches: List[str]) -> List[str]:
+#     goal_start = int(matches[0])
+#     result = []
+#     for footy in footy_db:
+#         if(get_goals(footy) >= goal_start):
+#             result.append(get_player(footy))
+#     return result
+
 def player_by_goal(matches: List[str]) -> List[str]:
     goal_given = int(matches[0])
     result = []
@@ -39,12 +56,13 @@ def player_by_goal(matches: List[str]) -> List[str]:
             break
     return result
 
-def player_by_goal_range(matches: List[str]) -> List[str]:
-    goal_range_given = int(matches[0])
+def player_by_assists(matches: List[str]) -> List[str]:
+    assists_given = int(matches[0])
     result = []
     for footy in footy_db:
-        if get_goals(footy) >= goal_range_given:
+        if get_assists(footy) == assists_given:
             result.append(get_player(footy))
+            break
     return result
 
 # dummy argument is ignored and doesn't matter
@@ -57,7 +75,8 @@ def bye_action(dummy: List[str]) -> None:
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what players play on _"), players_by_team),
     (str.split("what player scored _ goals"), player_by_goal),
-    (str.split("what players scored over _ goals"), player_by_goal_range),
+    (str.split("what player had _ assists"), player_by_assists),
+    (str.split("What team does _ play for"), team_by_player),
     (["bye"], bye_action)
 ]
 
