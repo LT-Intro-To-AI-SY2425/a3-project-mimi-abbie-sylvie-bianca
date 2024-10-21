@@ -30,12 +30,7 @@ def get_assists(footy: Tuple[str, str, int, int, int]) -> int:
 #         if get_team(footy) == team:
 #             print("match")
 #             # result.append(get_team(footy))
-#     return result
-
-
-
-
-
+#     return results
 
 def players_by_team(matches: List[str]) -> List[str]:
     team = str(matches[0])
@@ -52,8 +47,9 @@ def team_by_player(matches: List[str]) -> List[str]:
     result = []
     for footy in footy_db:
         players = get_player(footy)
-        if player in player:
+        if player in players:
             result.append(get_team(footy))
+            break
     return result
 
 # def player_by_goal(matches: List[str]) -> List[str]:
@@ -104,7 +100,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what player scored _ goals"), player_by_goal),
     (str.split("how many assists does %  have"), assists_by_player),
     (str.split("what player had _ assists"), player_by_assists),
-    (str.split("What team does _ play for"), team_by_player),
+    (str.split("what team does % play for"), team_by_player),
     (["bye"], bye_action)
 ]
 
