@@ -136,6 +136,15 @@ def mins_by_player(matches: List[int])-> List[int]:
             result.append(get_mins(footy))
             break
     return result
+
+def player_by_assists(matches: List[str])-> List[str]:
+    assists_given = int(matches[0])
+    result = []
+    for footy in footy_db:
+        if get_assists(footy) == assists_given:
+            result.append(get_player(footy))
+            break
+    return result
 # The pattern-action list for the natural language query system A list of tuples of
 # pattern and action It must be declared here, after all of the function definitions
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
