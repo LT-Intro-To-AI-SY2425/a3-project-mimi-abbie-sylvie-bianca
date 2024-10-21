@@ -31,6 +31,12 @@ def get_assists(footy: Tuple[str, str, int, int, int]) -> int:
 #             print("match")
 #             # result.append(get_team(footy))
 #     return result
+
+
+
+
+
+
 def players_by_team(matches: List[str]) -> List[str]:
     team = str(matches[0])
     result = []
