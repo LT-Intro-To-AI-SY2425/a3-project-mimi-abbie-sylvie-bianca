@@ -153,6 +153,8 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("how many assists does %  have"), assists_by_player),
     (str.split("what player had _ assists"), player_by_assists),
     (str.split("what team does % play for"), team_by_player),
+    (str.split("what player played for _ minutes"), player_by_min),
+    (str.split("how many minutes did % play"), mins_by_player),
     (["bye"], bye_action)
 ]
 
