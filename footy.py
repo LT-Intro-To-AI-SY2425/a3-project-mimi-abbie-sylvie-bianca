@@ -154,7 +154,7 @@ def player_by_assists(matches: List[str])-> List[str]:
 # The pattern-action list for the natural language query system A list of tuples of
 # pattern and action It must be declared here, after all of the function definitions
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
-    (str.split("what players play on _"), players_by_team),
+    (str.split("what players play on % "), players_by_team),
     (str.split("what player scored _ goals"), player_by_goal),
     (str.split("how many assists does %  have"), assists_by_player),
     (str.split("what player had _ assists"), player_by_assists),
